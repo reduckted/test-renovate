@@ -7,7 +7,7 @@
             "postUpgradeTasks": {
                 "commands": ["node ./two.js"],
                 "fileFilters": ["two.txt"],
-                "executionMode": "branch"
+                "executionMode": "update"
             }
         },
         {
@@ -15,7 +15,7 @@
             "postUpgradeTasks": {
                 "commands": ["node ./one.js"],
                 "fileFilters": ["one.txt"],
-                "executionMode": "branch"
+                "executionMode": "update"
             }
         }
     ]
