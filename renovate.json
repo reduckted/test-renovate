@@ -1,0 +1,22 @@
+{
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "extends": ["group:all"],
+    "packageRules": [
+        {
+            "matchDepTypes": ["devDependencies"],
+            "postUpgradeTasks": {
+                "commands": ["node ./one.js"],
+                "fileFilters": ["one.txt"],
+                "executionMode": "branch"
+            }
+        },
+        {
+            "matchDepTypes": ["dependencies"],
+            "postUpgradeTasks": {
+                "commands": ["node ./two.js"],
+                "fileFilters": ["two.txt"],
+                "executionMode": "branch"
+            }
+        }
+    ]
+}

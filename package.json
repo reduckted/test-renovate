@@ -1,0 +1,15 @@
+{
+    "name": "test-renovate",
+    "version": "1.0.0",
+    "description": "",
+    "license": "ISC",
+    "author": "",
+    "type": "module",
+    "main": "index.js",
+    "dependencies": {
+        "globals": "16.2.0"
+    },
+    "devDependencies": {
+        "prettier": "3.5.3"
+    }
+}
