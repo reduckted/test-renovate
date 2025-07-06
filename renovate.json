@@ -19,12 +19,12 @@
             }
         },
         {
-            "matchFileNames": ["**/Directory.Packages.Net80.props"],
+            "matchFileNames": ["dotnet/Directory.Packages.Net80.props"],
             "matchDepTypes": ["AspNet.Security.OAuth.GitHub"],
             "allowedVersions": "/^8\\..+$/"
         },
         {
-            "matchFileNames": ["**/Directory.Packages.Net90.props"],
+            "matchFileNames": ["dotnet/Directory.Packages.Net90.props"],
             "matchDepTypes": ["AspNet.Security.OAuth.GitHub"],
             "allowedVersions": "/^9\\..+$/"
         }
