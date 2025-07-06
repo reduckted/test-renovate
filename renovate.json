@@ -17,6 +17,16 @@
                 "fileFilters": ["one.txt"],
                 "executionMode": "update"
             }
+        },
+        {
+            "matchFileNames": ["Directory.Packages.Net80.props"],
+            "matchDepTypes": ["AspNet.Security.OAuth.GitHub"],
+            "allowedVersions": "/^8\\..+$/"
+        },
+        {
+            "matchFileNames": ["Directory.Packages.Net90.props"],
+            "matchDepTypes": ["AspNet.Security.OAuth.GitHub"],
+            "allowedVersions": "/^9\\..+$/"
         }
     ]
 }
