@@ -1,32 +1,6 @@
 {
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-    "extends": ["group:all", "something/else"],
-    "packageRules": [
-        {
-            "matchDepTypes": ["dependencies"],
-            "postUpgradeTasks": {
-                "commands": ["node ./two.js"],
-                "fileFilters": ["two.txt"],
-                "executionMode": "update"
-            }
-        },
-        {
-            "matchDepTypes": ["devDependencies"],
-            "postUpgradeTasks": {
-                "commands": ["node ./one.js"],
-                "fileFilters": ["one.txt"],
-                "executionMode": "update"
-            }
-        },
-        {
-            "matchFileNames": ["dotnet/Directory.Packages.Net80.props"],
-            "matchDepNames": ["AspNet.Security.OAuth.GitHub"],
-            "allowedVersions": "/^8\\..+$/"
-        },
-        {
-            "matchFileNames": ["dotnet/Directory.Packages.Net90.props"],
-            "matchDepNames": ["AspNet.Security.OAuth.GitHub"],
-            "allowedVersions": "/^9\\..+$/"
-        }
-    ]
+    "extends": ["group:all"],
+    "minimumReleaseAge": "90 days",
+    "packageRules": []
 }
