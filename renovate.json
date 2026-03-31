@@ -1,6 +1,6 @@
 {
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
     "extends": ["group:all"],
-    "minimumReleaseAge": "90 days",
+    "minimumReleaseAge": "30 days",
     "packageRules": []
 }
