@@ -5,7 +5,7 @@
         {
             "matchDepNames": ["reduckted/test-renovate-actions"],
             "matchCurrentVersion": "/\\+alpha$/",
-            "allowedVersions": "/^\\+alpha$/"
+            "allowedVersions": "/\\+alpha$/"
         }
     ]
 }
