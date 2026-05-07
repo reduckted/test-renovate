@@ -1,24 +1,7 @@
 {
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
     "extends": ["group:all"],
-    "customManagers": [
-        {
-            "customType": "regex",
-            "managerFilePatterns": ["\\.github/workflows/test\\.yml$"],
-            "matchStrings": [
-                "uses: reduckted\\/test-renovate-actions\\/alpha@(?<currentValue>\\S+)"
-            ],
-            "depNameTemplate": "reduckted/test-renovate-actions/alpha",
-            "datasourceTemplate": "github-tags",
-            "packageNameTemplate": "reduckted/test-renovate-actions",
-            "depTypeTemplate": "action"
-        }
-    ],
     "packageRules": [
-        // {
-        //     "matchPackageNames": ["reduckted/test-renovate-actions"],
-        //     "enabled": false
-        // },
         {
             "matchDepNames": ["reduckted/test-renovate-actions"],
             "matchCurrentVersion": "/\\+alpha$/",
