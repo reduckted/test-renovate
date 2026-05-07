@@ -8,4 +8,4 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - run: echo hello world
+      - uses: reduckted/test-renovate-actions/alpha@1.0.0+alpha

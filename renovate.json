@@ -1,6 +1,24 @@
 {
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
     "extends": ["group:all"],
-    "minimumReleaseAge": "30 days",
-    "packageRules": []
+    "customManagers": [
+        {
+            "customType": "regex",
+            "matchStrings": [
+                "uses: reduckted/test-renovate-actions/alpha@(?<currentValue>\\S+)"
+            ],
+            "depNameTemplate": "reduckted/test-renovate-actions/alpha",
+            "datasourceTemplate": "github-tags"
+        }
+    ],
+    "packageRules": [
+        {
+            "matchPackageNames": ["reduckted/test-renovate-actions"],
+            "enabled": false
+        },
+        {
+            "matchDepNames": ["reduckted/test-renovate-actions/alpha"],
+            "allowedVersions": "^\\d+\\.\\d+\\.\\d+\\+alpha$"
+        }
+    ]
 }
