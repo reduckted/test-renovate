@@ -4,12 +4,14 @@
     "customManagers": [
         {
             "customType": "regex",
-            "managerFilePatterns": ["\\.github/workflows/.*\\.yml$"],
+            "managerFilePatterns": ["\\.github/workflows/test\\.yml$"],
             "matchStrings": [
-                "uses: reduckted/test-renovate-actions/alpha@(?<currentValue>\\S+)"
+                "uses: reduckted\\/test-renovate-actions\\/alpha@(?<currentValue>\\S+)"
             ],
             "depNameTemplate": "reduckted/test-renovate-actions/alpha",
-            "datasourceTemplate": "github-tags"
+            "datasourceTemplate": "github-tags",
+            "packageNameTemplate": "reduckted/test-renovate-actions",
+            "depTypeTemplate": "action"
         }
     ],
     "packageRules": [
