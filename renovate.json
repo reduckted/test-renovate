@@ -20,8 +20,9 @@
         //     "enabled": false
         // },
         {
-            "matchDepNames": ["reduckted/test-renovate-actions/alpha"],
-            "allowedVersions": "^\\d+\\.\\d+\\.\\d+\\+alpha$"
+            "matchDepNames": ["reduckted/test-renovate-actions"],
+            "matchCurrentVersion": "/+alpha$/",
+            "allowedVersions": "/^+alpha$/"
         }
     ]
 }
