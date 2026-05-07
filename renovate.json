@@ -6,6 +6,11 @@
             "matchDepNames": ["reduckted/test-renovate-actions"],
             "matchCurrentVersion": "/\\+alpha$/",
             "allowedVersions": "/\\+alpha$/"
+        },
+        {
+            "matchDepNames": ["reduckted/test-renovate-actions"],
+            "matchCurrentVersion": "/\\+beta$/",
+            "allowedVersions": "/\\+beta$/"
         }
     ]
 }
