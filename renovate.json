@@ -21,8 +21,8 @@
         // },
         {
             "matchDepNames": ["reduckted/test-renovate-actions"],
-            "matchCurrentVersion": "/+alpha$/",
-            "allowedVersions": "/^+alpha$/"
+            "matchCurrentVersion": "/\\+alpha$/",
+            "allowedVersions": "/^\\+alpha$/"
         }
     ]
 }
