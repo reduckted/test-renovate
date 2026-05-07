@@ -4,6 +4,7 @@
     "customManagers": [
         {
             "customType": "regex",
+            "managerFilePatterns": ["\\.github/workflows/.*\\.yml$"],
             "matchStrings": [
                 "uses: reduckted/test-renovate-actions/alpha@(?<currentValue>\\S+)"
             ],
