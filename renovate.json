@@ -15,10 +15,10 @@
         }
     ],
     "packageRules": [
-        {
-            "matchPackageNames": ["reduckted/test-renovate-actions"],
-            "enabled": false
-        },
+        // {
+        //     "matchPackageNames": ["reduckted/test-renovate-actions"],
+        //     "enabled": false
+        // },
         {
             "matchDepNames": ["reduckted/test-renovate-actions/alpha"],
             "allowedVersions": "^\\d+\\.\\d+\\.\\d+\\+alpha$"
