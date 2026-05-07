@@ -9,3 +9,5 @@ jobs:
 
     steps:
       - uses: reduckted/test-renovate-actions/alpha@1.0.0+alpha
+      - uses: reduckted/test-renovate-actions/alpha@1.0.0+beta
+      - uses: reduckted/test-renovate-actions/alpha@1.0.0+gamma
