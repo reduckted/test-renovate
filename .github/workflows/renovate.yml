@@ -14,22 +14,28 @@ jobs:
     runs-on: windows-latest
 
     steps:
-      - uses: actions/checkout@v6
+      - name: Checkout Renovate
+        uses: actions/checkout@v6
         with:
           repository: reduckted/renovate
           ref: main
 
-      - uses: actions/setup-node@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
         with:
           node-version-file: "package.json"
 
-      - run: |
-          corepack enable
-          pnpm install
+      - name: Enable corepack
+        run: corepack enable
 
-      - run: |
+      - name: Install Dependencies
+        run: pnpm install
+
+      - name: Run Renovate
+        run: |
           pnpm run start
         env:
           RENOVATE_TOKEN: ${{ secrets.RENOVATE_TOKEN }}
-          RENOVATE_CONFIG_FILE: config.json
           RENOVATE_DRY_RUN: ${{ inputs.dry-run && 'full' || '' }}
+          RENOVATE_PLATFORM: github
+          RENOVATE_REPOSITORIES: reduckted/test-renovate
