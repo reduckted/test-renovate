@@ -13,6 +13,11 @@ jobs:
   renovate:
     runs-on: windows-latest
 
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: write
+
     steps:
       - name: Checkout Renovate
         uses: actions/checkout@v6
@@ -36,8 +41,8 @@ jobs:
           pnpm run start
         env:
           LOG_LEVEL: ${{ inputs.dry-run && 'debug' || 'info' }}
-          RENOVATE_TOKEN: ${{ secrets.RENOVATE_TOKEN }}
+          RENOVATE_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           RENOVATE_DRY_RUN: ${{ inputs.dry-run && 'full' || '' }}
           RENOVATE_PLATFORM: github
           RENOVATE_REPOSITORIES: reduckted/test-renovate
-          RENOVATE_GITHUB_COM_TOKEN: ${{ secrets.RENOVATE_TOKEN }}
+          RENOVATE_GITHUB_COM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
