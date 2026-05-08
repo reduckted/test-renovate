@@ -35,6 +35,7 @@ jobs:
         run: |
           pnpm run start
         env:
+          LOG_LEVEL: ${{ inputs.dry-run && 'debug' || 'info' }}
           RENOVATE_TOKEN: ${{ secrets.RENOVATE_TOKEN }}
           RENOVATE_DRY_RUN: ${{ inputs.dry-run && 'full' || '' }}
           RENOVATE_PLATFORM: github
