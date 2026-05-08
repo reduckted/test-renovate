@@ -1,0 +1,35 @@
+name: Renovate
+
+on:
+  workflow_dispatch:
+    inputs:
+      dry-run:
+        description: "Dry-run mode"
+        type: boolean
+        required: false
+        default: false
+
+jobs:
+  renovate:
+    runs-on: windows-latest
+
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          repository: reduckted/renovate
+          ref: main
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version-file: "package.json"
+
+      - run: |
+          corepack enable
+          pnpm install
+
+      - run: |
+          pnpm run start
+        env:
+          RENOVATE_TOKEN: ${{ secrets.RENOVATE_TOKEN }}
+          RENOVATE_CONFIG_FILE: config.json
+          RENOVATE_DRY_RUN: ${{ inputs.dry-run && 'full' || '' }}
