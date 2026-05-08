@@ -1,3 +1,4 @@
-node_modules/
 bin/
+cli-tools/
+node_modules/
 obj/
