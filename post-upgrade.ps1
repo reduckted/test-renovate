@@ -1,6 +1,9 @@
 $ErrorActionPreference = "Stop"
 $ProgressPreference = "SilentlyContinue"
 
+Write-Host "PROCESSOR_ARCHITECTURE = $env:PROCESSOR_ARCHITECTURE"
+Write-Host "PATHEXT = $env:PATHEXT"
+
 $InstallDir = "./cli-tools"
 $Version = Get-Content -Path "global.json" | ConvertFrom-Json | Select-Object -ExpandProperty sdk | Select-Object -ExpandProperty version
 

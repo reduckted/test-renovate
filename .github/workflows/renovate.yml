@@ -20,6 +20,10 @@ jobs:
           repository: reduckted/renovate
           ref: main
 
+      - name: Test Post-Upgrade
+        shell: pwsh
+        run: ./post-upgrade.ps1
+
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
