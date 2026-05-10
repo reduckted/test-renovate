@@ -18,7 +18,7 @@ jobs:
         uses: actions/checkout@v6
         with:
           repository: reduckted/renovate
-          ref: main
+          ref: feature/more-windows-env-vars
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
