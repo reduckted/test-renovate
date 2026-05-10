@@ -1,0 +1,16 @@
+name: Test Post-Upgrade
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout Renovate
+        uses: actions/checkout@v6
+
+      - name: Test Post-Upgrade
+        shell: pwsh
+        run: ./post-upgrade.ps1
