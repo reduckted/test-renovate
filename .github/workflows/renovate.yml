@@ -11,7 +11,7 @@ on:
 
 jobs:
   renovate:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
       - name: Checkout Renovate
@@ -31,6 +31,11 @@ jobs:
       - name: Install Dependencies
         run: pnpm install
 
+      - name: Inherit Environment Variables
+        run: |
+          echo "PATHEXT=$Env:PATHEXT" >> $GITHUB_ENV
+          echo "PROCESSOR_ARCHITECTURE=$Env:PROCESSOR_ARCHITECTURE" >> $GITHUB_ENV
+
       - name: Run Renovate
         run: |
           pnpm run start
@@ -42,3 +47,4 @@ jobs:
           RENOVATE_PLATFORM: github
           RENOVATE_REPOSITORIES: reduckted/test-renovate
           RENOVATE_TOKEN: ${{ secrets.RENOVATE_TOKEN }}
+          RENOVATE_CUSTOM_ENV_VARIABLES: '{"PATHEXT": ${{ env.PATHEXT }}, "PROCESSOR_ARCHITECTURE": ${{ env.PROCESSOR_ARCHITECTURE }}}'
