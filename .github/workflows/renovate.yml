@@ -11,14 +11,14 @@ on:
 
 jobs:
   renovate:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout Renovate
         uses: actions/checkout@v6
         with:
           repository: reduckted/renovate
-          ref: feature/more-windows-env-vars
+          ref: feature/unsafe-simple-git
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
