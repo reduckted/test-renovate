@@ -32,9 +32,9 @@ jobs:
         run: pnpm install
 
       - name: Inherit Environment Variables
+        shell: bash
         run: |
-          echo "PATHEXT=$Env:PATHEXT" >> $GITHUB_ENV
-          echo "PROCESSOR_ARCHITECTURE=$Env:PROCESSOR_ARCHITECTURE" >> $GITHUB_ENV
+          echo "RENOVATE_CUSTOM_ENV_VARIABLES={\"PATHEXT\": \"$PATHEXT\", \"PROCESSOR_ARCHITECTURE\": \"$PROCESSOR_ARCHITECTURE }\"
 
       - name: Run Renovate
         run: |
@@ -47,4 +47,3 @@ jobs:
           RENOVATE_PLATFORM: github
           RENOVATE_REPOSITORIES: reduckted/test-renovate
           RENOVATE_TOKEN: ${{ secrets.RENOVATE_TOKEN }}
-          RENOVATE_CUSTOM_ENV_VARIABLES: '{"PATHEXT": ${{ env.PATHEXT }}, "PROCESSOR_ARCHITECTURE": ${{ env.PROCESSOR_ARCHITECTURE }}}'
