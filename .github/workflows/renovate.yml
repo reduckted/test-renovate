@@ -34,7 +34,7 @@ jobs:
       - name: Inherit Environment Variables
         shell: bash
         run: |
-          echo "RENOVATE_CUSTOM_ENV_VARIABLES={\"PATHEXT\": \"$PATHEXT\", \"PROCESSOR_ARCHITECTURE\": \"$PROCESSOR_ARCHITECTURE }\"
+          echo "RENOVATE_CUSTOM_ENV_VARIABLES={\"PATHEXT\": \"$PATHEXT\", \"PROCESSOR_ARCHITECTURE\": \"$PROCESSOR_ARCHITECTURE }\"" >> $GITHUB_ENV
 
       - name: Run Renovate
         run: |
