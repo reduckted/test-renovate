@@ -1,8 +1,11 @@
 {
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
     "extends": ["group:all"],
-    "postUpgradeTasks": {
-        "commands": ["pwsh ./post-upgrade.ps1"],
-        "executionMode": "branch"
-    }
+    "minimumReleaseAge": "7 days",
+    "packageRules": [
+        {
+            "matchPackageNames": ["eslint-plugin-unicorn"],
+            "minimumReleaseAge": null
+        }
+    ]
 }
