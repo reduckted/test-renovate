@@ -6,6 +6,10 @@
         {
             "matchPackageNames": ["eslint-plugin-unicorn"],
             "minimumReleaseAge": null
+        },
+        {
+            "matchManagers": ["nuget"],
+            "enabled": false
         }
     ]
 }
