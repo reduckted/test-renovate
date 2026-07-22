@@ -1,8 +1,10 @@
 {
-  "name": "test-renovate",
-  "private": true,
-  "dependencies": {
-    "eslint-plugin-unicorn": "69.0.0",
-    "ws": "8.20.1"
-  }
+    "name": "test-renovate",
+    "private": true,
+    "dependencies": {
+        "@angular/core": "19.2.17",
+        "@angular/compiler": "19.2.17",
+        "@angular/common": "19.2.17",
+        "@angular/platform-browser": "19.2.17"
+    }
 }

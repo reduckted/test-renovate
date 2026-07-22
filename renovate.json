@@ -1,11 +1,13 @@
 {
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-    "extends": ["group:all"],
-    "minimumReleaseAge": "7 days",
+    "osvVulnerabilityAlerts": true,
     "packageRules": [
         {
-            "matchPackageNames": ["eslint-plugin-unicorn"],
-            "minimumReleaseAge": null
+            "enabled": false,
+            "matchPackageNames": ["*"]
         }
-    ]
+    ],
+    "vulnerabilityAlerts": {
+        "enabled": true
+    }
 }
