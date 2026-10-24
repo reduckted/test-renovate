@@ -35,9 +35,17 @@ jobs:
           pnpm run start
         env:
           LOG_LEVEL: ${{ inputs.dry-run && 'debug' || 'info' }}
+          LOG_FILE: "renovate.log"
           RENOVATE_ALLOWED_COMMANDS: "^pwsh"
           RENOVATE_DRY_RUN: ${{ inputs.dry-run && 'full' || '' }}
           RENOVATE_GITHUB_COM_TOKEN: ${{ secrets.RENOVATE_GITHUB_COM_TOKEN }}
           RENOVATE_PLATFORM: github
           RENOVATE_REPOSITORIES: reduckted/test-renovate
           RENOVATE_TOKEN: ${{ secrets.RENOVATE_TOKEN }}
+
+      - name: Upload Log
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          path: "renovate.log"
+          retention-days: 1
